@@ -10,7 +10,7 @@ User      |       Register, log in, post questions/answers, vote
 Admin     |      Moderate content
 Core Features (Must-Have)
 
-Core Features
+Core Features:-
 1. Ask Question
 Users can subm it a new question using:
 Title – Short and descriptive
