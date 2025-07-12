@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
-import { MobileNavbar } from './components/MobileNavbar';
-import { AskQuestionNavbar } from './components/AskQuestionNavbar';
-import { QuestionDetailsPage } from './components/QuestionDetailsPage';
-import { QuestionsList } from './components/QuestionsList';
-import { Pagination } from './components/Pagination';
-import { AskQuestionForm } from './components/AskQuestionForm';
+import { Navbar } from './Navbar';
+import { MobileNavbar } from './MobileNavbar';
+import { AskQuestionNavbar } from './AskQuestionNavbar';
+import { QuestionDetailsPage } from './QuestionDetailsPage';
+import { QuestionsList } from './QuestionsList';
+import { Pagination } from './Pagination';
+import { AskQuestionForm } from './AskQuestionForm';
 
 type Page = 'home' | 'ask-question' | 'question-details';
 
