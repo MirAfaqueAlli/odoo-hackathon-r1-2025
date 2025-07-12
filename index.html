@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StackIt - Q&A Platform</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="#" class="logo">StackIt</a>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </div>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search questions...">
+                    <div class="search-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="questions">Questions</button>
+                        <button class="filter-btn" data-filter="answers">Answers</button>
+                    </div>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+
+            <div class="user-section">
+                <!-- Stats Section -->
+                <div class="nav-stats">
+                    <div class="nav-stat">
+                        <span class="nav-stat-number" id="totalQuestions">0</span>
+                        <span>questions</span>
+                    </div>
+                    <div class="nav-stat">
+                        <span class="nav-stat-number" id="totalAnswers">0</span>
+                        <span>answers</span>
+                    </div>
+                    <div class="nav-stat">
+                        <span class="nav-stat-number" id="totalUsers">1</span>
+                        <span>users</span>
+                    </div>
+                </div>
+                
+                <!-- Notification Section -->
+                <div class="notification-icon" id="notificationIcon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+                    </svg>
+                    <span class="notification-count" id="notificationCount" style="display: none">0</span>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <span>Notifications</span>
+                            <span class="mark-all-read" id="markAllRead">Mark all as read</span>
+                        </div>
+                        <div id="notificationList">
+                            <div class="notification-empty">No notifications yet</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- User Authentication Section -->
+                <div id="authSection">
+                    <div class="login-section" id="loginSection">
+                        <div class="google-signin-wrapper">
+                            <!-- Google Sign-In button will be rendered here -->
+                        </div>
+                    </div>
+                    
+                    <div class="user-info" id="userInfo" style="display: none;">
+                        <div class="user-profile" id="userProfile">
+                            <img class="profile-avatar" id="userAvatar" src="" alt="User Avatar">
+                            <div class="profile-dropdown" id="profileDropdown">
+                                <!-- Profile dropdown content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Ask Question Section -->
+        <div class="ask-section">
+            <div id="authRequired" class="auth-required" style="display: none;">
+                <span>⚠️</span>
+                <span>Please sign in with Google to ask questions and post answers.</span>
+            </div>
+            <h2 class="section-title">Ask a Question</h2>
+            <form id="questionForm">
+                <!-- Question form fields -->
+            </form>
+        </div>
+
+        <!-- Questions Section -->
+        <div class="questions-section">
+            <div class="questions-header">
+                <h2 class="section-title">Recent Questions</h2>
+                <div class="questions-filter">
+                    <button class="filter-button active" onclick="showAllQuestions()">All Questions</button>
+                    <button class="filter-button" onclick="showMyQuestions()">My Questions</button>
+                </div>
+            </div>
+            <div id="questionsList">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Load our modules -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html> 
