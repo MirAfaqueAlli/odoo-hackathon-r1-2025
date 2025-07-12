@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StackIt – Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>StackIt</h1>
+    <nav>
+        <div class="nav-right">
+        <div id="notification-bell">
+            🔔
+            <span id="notif-count">0</span>
+            <div id="notif-dropdown"></div>
+        </div>
+        <a href="ask.html" class="btn">Ask Question</a>
+        </div>
+        <div class="navbar-user">
+        <span id="current-user"></span>
+        <button id="logout-btn" style="display: none;">Logout</button>
+        </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="tag-filters" class="tag-filter-bar">
+        <strong>Filter by tag:</strong>
+        <div id="tag-list" class="tag-list"></div>
+        <button id="clear-filter" class="clear-filter" style="display: none;">❌ Clear Filter</button>
+    </div>
+    <section id="questions-container">
+      <!-- Questions will be injected here -->
+    </section>
+  </main>
+
+  <script src="script.js" type="module"></script>
+  <script>
+    showUserInNavbar();
+  </script>
+</body>
+</html>
