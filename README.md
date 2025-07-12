@@ -13,6 +13,7 @@ Core Features (Must-Have)
 Core Features:-
 1. Ask Question
 Users can subm it a new question using:
+
 Title – Short and descriptive
 Description – Written using a rich text editor
 Admin Role;
